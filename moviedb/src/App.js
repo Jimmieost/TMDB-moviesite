@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import MovieContent from "./MovieContent";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const API_URL_popular =
   "https://api.themoviedb.org/3/movie/popular?api_key=8346c0e0537ba845dea03612f4d2c866";
@@ -19,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="list-container">
       {popularMovies.map((movieRequest) => (
         <MovieContent key={movieRequest.id} {...movieRequest} />
       ))}
