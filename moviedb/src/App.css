@@ -1,13 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700&display=swap");
-
 body {
-  font-family: "Source Sans Pro", sans-serif;
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style-type: none;
   outline: none;
-  background-color: rgba(255, 0, 0, 0.781);
 }
 /*Sidescroll*/
 .list-container {
@@ -20,4 +16,24 @@ body {
 
 .movie-card {
   flex: 0 0 auto;
+}
+
+#root {
+  background-color: black;
+}
+h2 {
+  text-align: center;
+  color: white;
+}
+.btn-btn-dark {
+  background-color: rgba(36, 2, 2, 0.644);
+  color: white;
+}
+
+div.container-fluid {
+  background-color: rgb(10, 10, 10);
+  margin-top: 0;
+}
+.card-body {
+  background-color: rgb(10, 10, 10);
 }

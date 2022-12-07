@@ -16,11 +16,11 @@ const MovieContent = ({
   const handleClose = () => setShow(false);
 
   return (
-    <div className="movie-card card text-center bg-dark mb-3">
+    <div className="movie-card card text-center mb-3">
       <div className="card-body">
         <img
           className="card-img-top"
-          style={{ width: "14rem" }}
+          style={{ width: "10rem" }}
           src={API_IMG + poster_path}
         />
         <div className="card-body">
