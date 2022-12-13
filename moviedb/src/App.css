@@ -5,6 +5,10 @@ body {
   list-style-type: none;
   outline: none;
 }
+nav {
+  background-color: rgb(29, 29, 29);
+  border-bottom: white;
+}
 /*Sidescroll*/
 .list-container {
   width: 100%;
@@ -19,21 +23,38 @@ body {
 }
 
 #root {
-  background-color: black;
+  background-color: rgb(29, 29, 29);
 }
 h2 {
   text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: white;
+  background: linear-gradient(-10deg, #d41111, #000000, #0e0483);
+}
+.card-button {
+  background-color: black;
   color: white;
 }
-.btn-btn-dark {
-  background-color: rgba(36, 2, 2, 0.644);
+.card-button:hover {
+  background-color: rgb(22, 22, 22);
   color: white;
+}
+button.search-button.btn.btn-secondary {
+  background-color: black;
+}
+button.search-button.btn.btn-secondary:hover {
+  background-color: rgb(22, 22, 22);
+}
+button.modal-button.btn.btn-secondary {
+  background-color: rgb(36, 2, 2);
 }
 
 div.container-fluid {
-  background-color: rgb(10, 10, 10);
+  background-color: rgb(29, 29, 29);
   margin-top: 0;
 }
 .card-body {
-  background-color: rgb(10, 10, 10);
+  background-color: black;
+  color: white;
 }

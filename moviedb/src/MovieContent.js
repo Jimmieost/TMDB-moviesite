@@ -24,8 +24,10 @@ const MovieContent = ({
           src={API_IMG + poster_path}
         />
         <div className="card-body">
-          <button type="button" className="btn-btn-dark" onClick={handleShow}>
-            View More
+          <p>Rating: {vote_average}</p>
+          <br />
+          <button type="button" className="card-button" onClick={handleShow}>
+            {title}
           </button>
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -34,14 +36,18 @@ const MovieContent = ({
             <Modal.Body>
               <img className="card-img-top" src={API_IMG + poster_path} />
               <h3>{title}</h3>
-              <h4>Vote: {vote_average}</h4>
-              <h5>Realease Date{release_date}</h5>
+              <h4>Rating: {vote_average}</h4>
+              <h5>Realease Date: {release_date}</h5>
               <br></br>
               <h6>Overview</h6>
               <p>{overview}</p>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
+              <Button
+                className="modal-button"
+                variant="secondary"
+                onClick={handleClose}
+              >
                 Close
               </Button>
             </Modal.Footer>
