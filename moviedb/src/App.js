@@ -17,11 +17,12 @@ const API_URL_upcoming =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=8346c0e0537ba845dea03612f4d2c866";
 const API_SEARCH =
   "https://api.themoviedb.org/3/search/movie?api_key=8346c0e0537ba845dea03612f4d2c866&query";
+const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
 function App() {
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
-  // const [recentlyViewed, setRecentlyViewed] = useState([]);
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
 
   const [query, setQuery] = useState("");
 
@@ -56,13 +57,43 @@ function App() {
     }
   };
 
+  const addRecentlyViewedFromPopular = (id) => {
+    if (!recentlyViewed.some((x) => x.id === id)) {
+      var recentlyViewedMovie = popularMovies.find((x) => x.id === id);
+      if (recentlyViewed.length >= 5) {
+        const movies = [...recentlyViewed, recentlyViewedMovie];
+        setRecentlyViewed(movies.slice(1, 6));
+      } else {
+        setRecentlyViewed((currentArray) => [
+          ...currentArray,
+          recentlyViewedMovie,
+        ]);
+      }
+    }
+  };
+
+  const addRecentlyViewedFromUpcoming = (id) => {
+    if (!recentlyViewed.some((x) => x.id === id)) {
+      var recentlyViewedMovie = upcomingMovies.find((x) => x.id === id);
+      if (recentlyViewed.length >= 5) {
+        const movies = [...recentlyViewed, recentlyViewedMovie];
+        setRecentlyViewed(movies.slice(1, 6));
+      } else {
+        setRecentlyViewed((currentArray) => [
+          ...currentArray,
+          recentlyViewedMovie,
+        ]);
+      }
+    }
+  };
+
   const changeHandler = (e) => {
     setQuery(e.target.value);
   };
 
   return (
     <>
-      <Navbar expand="lg" variant="dark">
+      <Navbar bg="black" expand="lg" variant="dark">
         <Container fluid>
           <Navbar.Brand href="/home">TMDB Movie App</Navbar.Brand>
           <Navbar.Brand href="/home">IMDB</Navbar.Brand>
@@ -95,7 +126,11 @@ function App() {
       <h2>Popular Movies</h2>
       <div className="list-container">
         {popularMovies.map((movieRequest) => (
-          <MovieContent key={movieRequest.id} {...movieRequest} />
+          <MovieContent
+            key={movieRequest.id}
+            movie={movieRequest}
+            handleViewed={addRecentlyViewedFromPopular}
+          />
         ))}
       </div>
       <h2>Upcoming Movies</h2>
@@ -103,30 +138,18 @@ function App() {
         {upcomingMovies.map((movieRequest) => (
           <MovieContent
             key={movieRequest.id}
-            {...movieRequest}
-            // onShow={this.onShow}
+            movie={movieRequest}
+            handleViewed={addRecentlyViewedFromUpcoming}
           />
+        ))}
+      </div>
+      <h2>Recently viewed movies</h2>
+      <div className="list-container">
+        {recentlyViewed.map((movieRequest) => (
+          <MovieContent key={movieRequest.id} movie={movieRequest} />
         ))}
       </div>
     </>
   );
 }
-
 export default App;
-
-// class First extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       data: [{name: 'bob'}, {name: 'chris'}],
-//     };
-//   }
-
-//   render() {
-//     return (
-//       <ul>
-//         {this.state.data.map(d => <li key={d.name}>{d.name}</li>)}
-//       </ul>
-//     );
-//   }
-// }

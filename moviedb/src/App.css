@@ -9,6 +9,15 @@ nav {
   background-color: rgb(29, 29, 29);
   border-bottom: white;
 }
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.navbar-collapse {
+  flex-grow: 0;
+}
+
 /*Sidescroll*/
 .list-container {
   width: 100%;
@@ -29,8 +38,10 @@ h2 {
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  color: white;
-  background: linear-gradient(-10deg, #d41111, #000000, #0e0483);
+  color: rgb(206, 199, 199);
+  background: linear-gradient(-10deg, #d41111, #000000, #31303d);
+  font-weight: bolder;
+  font-style: oblique;
 }
 .card-button {
   background-color: black;
@@ -50,9 +61,15 @@ button.modal-button.btn.btn-secondary {
   background-color: rgb(36, 2, 2);
 }
 
-div.container-fluid {
+.hero-image {
   background-color: rgb(29, 29, 29);
   margin-top: 0;
+  background-image: url("it.jpg");
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 .card-body {
   background-color: black;
