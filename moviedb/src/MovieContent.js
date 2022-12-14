@@ -15,7 +15,7 @@ const MovieContent = (props) => {
   const handleClose = () => setShow(false);
 
   return (
-    <div className="movie-card card text-center mb-3">
+    <div className="movie-card text-center mb-3">
       <div className="card-body">
         <img
           className="card-img-top"

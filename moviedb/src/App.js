@@ -10,6 +10,7 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
+import logo from "./tmdblogo400x400.jpg";
 
 const API_URL_popular =
   "https://api.themoviedb.org/3/movie/popular?api_key=8346c0e0537ba845dea03612f4d2c866";
@@ -95,31 +96,34 @@ function App() {
     <>
       <Navbar bg="black" expand="lg" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="/home">TMDB Movie App</Navbar.Brand>
-          <Navbar.Brand href="/home">IMDB</Navbar.Brand>
+          <Navbar.Brand href="/home">
+            <img src={logo} alt="tmdb logo" />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll"></Navbar.Toggle>
-          <Navbar.Collapse id="navbarScroll">
-            <Nav style={{ maxHeight: "100px" }} navbarScroll></Nav>
+          <div>
+            <Navbar.Collapse id="navbarScroll">
+              <Nav style={{ maxHeight: "100px" }} navbarScroll></Nav>
 
-            <Form className="d-flex" onSubmit={searchMovie}>
-              <FormControl
-                type="search"
-                placeholder="Search TMDB"
-                className="me-2"
-                aria-label="search"
-                name="query"
-                value={query}
-                onChange={changeHandler}
-              ></FormControl>
-              <Button
-                className="search-button"
-                variant="secondary"
-                type="submit"
-              >
-                Search
-              </Button>
-            </Form>
-          </Navbar.Collapse>
+              <Form className="d-flex" onSubmit={searchMovie}>
+                <FormControl
+                  type="search"
+                  placeholder="Search TMDB"
+                  className="me-2"
+                  aria-label="search"
+                  name="query"
+                  value={query}
+                  onChange={changeHandler}
+                ></FormControl>
+                <Button
+                  className="search-button"
+                  variant="secondary"
+                  type="submit"
+                >
+                  Search
+                </Button>
+              </Form>
+            </Navbar.Collapse>
+          </div>
         </Container>
       </Navbar>
 
@@ -143,7 +147,7 @@ function App() {
           />
         ))}
       </div>
-      <h2>Recently viewed movies</h2>
+      <h2>Recently Viewed Movies</h2>
       <div className="list-container">
         {recentlyViewed.map((movieRequest) => (
           <MovieContent key={movieRequest.id} movie={movieRequest} />

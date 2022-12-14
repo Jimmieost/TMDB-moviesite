@@ -29,6 +29,10 @@ nav {
 
 .movie-card {
   flex: 0 0 auto;
+  box-shadow: 0 0 20px rgba(0, 110, 255, 0.462);
+  /* box-shadow: 0 0 20px rgba(255, 0, 0, 0.462); */
+  /* border: 1px solid rgb(160, 4, 35); */
+  /* transition: transform 300ms, background-color 300ms; */
 }
 
 #root {
@@ -39,13 +43,21 @@ h2 {
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: rgb(206, 199, 199);
-  background: linear-gradient(-10deg, #d41111, #000000, #31303d);
+  background: linear-gradient(
+    -10deg,
+    rgba(0, 110, 255, 0.462),
+    #000000,
+    #31303d
+  );
   font-weight: bolder;
   font-style: oblique;
 }
 .card-button {
   background-color: black;
   color: white;
+  transition: transform 300ms, background-color 300ms;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 110, 255, 0.462);
 }
 .card-button:hover {
   background-color: rgb(22, 22, 22);
@@ -53,25 +65,27 @@ h2 {
 }
 button.search-button.btn.btn-secondary {
   background-color: black;
+  transition: transform 300ms, background-color 300ms;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 110, 255, 0.462);
 }
 button.search-button.btn.btn-secondary:hover {
   background-color: rgb(22, 22, 22);
 }
 button.modal-button.btn.btn-secondary {
-  background-color: rgb(36, 2, 2);
+  background-color: black;
+}
+button.modal-button.btn.btn-secondary {
+  background-color: rgb(22, 22, 22);
 }
 
-.hero-image {
-  background-color: rgb(29, 29, 29);
-  margin-top: 0;
-  background-image: url("it.jpg");
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
 .card-body {
   background-color: black;
   color: white;
+  transition: transform 300ms, background-color 300ms;
+}
+.card-body:hover {
+  -ms-transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
 }
