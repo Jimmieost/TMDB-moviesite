@@ -21,6 +21,7 @@ const MovieContent = (props) => {
           className="card-img-top"
           style={{ width: "10rem" }}
           src={API_IMG + props.movie.poster_path}
+          alt="movie posters"
         />
         <div className="card-body">
           <p>Rating: {props.movie.vote_average}</p>
@@ -36,6 +37,7 @@ const MovieContent = (props) => {
               <img
                 className="card-img-top"
                 src={API_IMG + props.movie.poster_path}
+                alt="Movie posters"
               />
               <h3>{props.movie.title}</h3>
               <h4>Rating: {props.movie.vote_average}</h4>

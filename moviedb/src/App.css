@@ -26,6 +26,9 @@ nav {
   margin: 1rem auto;
   background-color: rgb(2, 2, 2);
 }
+.list-container::-webkit-scrollbar {
+  display: none;
+}
 
 .movie-card {
   flex: 0 0 auto;
@@ -39,9 +42,10 @@ nav {
   background-color: rgb(29, 29, 29);
 }
 h2 {
-  text-align: center;
+  text-align: start;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  padding-left: 1rem;
   color: rgb(206, 199, 199);
   background: linear-gradient(
     -10deg,
