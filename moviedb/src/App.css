@@ -17,6 +17,11 @@ nav {
 .navbar-collapse {
   flex-grow: 0;
 }
+.carousel-image {
+  height: 800px;
+  object-fit: cover;
+  object-position: top;
+}
 
 /*Sidescroll*/
 .list-container {
@@ -26,9 +31,9 @@ nav {
   margin: 1rem auto;
   background-color: rgb(2, 2, 2);
 }
-.list-container::-webkit-scrollbar {
+/* .list-container::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .movie-card {
   flex: 0 0 auto;
@@ -87,6 +92,7 @@ button.modal-button.btn.btn-secondary {
   background-color: black;
   color: white;
   transition: transform 300ms, background-color 300ms;
+  cursor: pointer;
 }
 .card-body:hover {
   -ms-transform: scale(1.03);

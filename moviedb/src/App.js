@@ -11,6 +11,9 @@ import {
   Button,
 } from "react-bootstrap";
 import logo from "./tmdblogo400x400.jpg";
+import MovieCarousel from "./MovieCarousel";
+
+const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
 const API_URL_popular =
   "https://api.themoviedb.org/3/movie/popular?api_key=8346c0e0537ba845dea03612f4d2c866";
@@ -123,6 +126,9 @@ function App() {
           </div>
         </Container>
       </Navbar>
+      {popularMovies.length > 0 ? (
+        <MovieCarousel movies={popularMovies} />
+      ) : null}
 
       <h2>Popular Movies</h2>
       <div className="list-container">
