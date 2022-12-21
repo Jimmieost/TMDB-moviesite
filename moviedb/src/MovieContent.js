@@ -2,7 +2,6 @@ import { Modal, Button } from "react-bootstrap";
 import React, { useState } from "react";
 const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
-//Lägger ut filmernas innehåll på sidan
 const MovieContent = (props) => {
   const [show, setShow] = useState(false);
 
@@ -44,7 +43,7 @@ const MovieContent = (props) => {
           <h5>Realease Date: {props.movie.release_date}</h5>
           <br></br>
           <h6>Overview</h6>
-          <p>{props.movie.overview}</p>
+          <p className="modal-p">{props.movie.overview}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button

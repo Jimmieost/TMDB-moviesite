@@ -13,8 +13,6 @@ import {
 import logo from "./tmdblogo400x400.jpg";
 import MovieCarousel from "./MovieCarousel";
 
-const API_IMG = "https://image.tmdb.org/t/p/w500/";
-
 const API_URL_popular =
   "https://api.themoviedb.org/3/movie/popular?api_key=8346c0e0537ba845dea03612f4d2c866";
 const API_URL_upcoming =
@@ -32,30 +30,26 @@ function App() {
     fetch(API_URL_popular)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setPopularMovies(data.results);
       });
 
     fetch(API_URL_upcoming)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setUpcomingMovies(data.results);
       });
   }, []);
 
   const searchMovie = async (e) => {
     e.preventDefault();
-    console.log("Searching");
+
     try {
       const url = `https://api.themoviedb.org/3/search/movie?api_key=8346c0e0537ba845dea03612f4d2c866&query=${query}`;
       const res = await fetch(url);
       const data = await res.json();
       console.log(data);
       setPopularMovies(data.results);
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   };
 
   const addRecentlyViewedFromPopular = (id) => {
