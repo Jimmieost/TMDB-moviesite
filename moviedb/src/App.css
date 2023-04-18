@@ -4,6 +4,10 @@ body {
   text-decoration: none;
   list-style-type: none;
   outline: none;
+  -webkit-text-size-adjust: 100%;
+}
+th {
+  text-align: -webkit-match-parent;
 }
 
 nav {
