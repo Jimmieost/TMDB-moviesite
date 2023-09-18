@@ -14,9 +14,9 @@ import logo from "./tmdblogo400x400.jpg";
 import MovieCarousel from "./MovieCarousel";
 
 const API_URL_popular =
-  "https://api.themoviedb.org/3/movie/popular?api_key=8346c0e0537ba845dea03612f4d2c866";
+  "https://api.themoviedb.org/3/movie/popular?api_key=3059989ed47b278a15f3e7af0b471e77";
 const API_URL_upcoming =
-  "https://api.themoviedb.org/3/movie/upcoming?api_key=8346c0e0537ba845dea03612f4d2c866";
+  "https://api.themoviedb.org/3/movie/upcoming?api_key=3059989ed47b278a15f3e7af0b471e77";
 
 function App() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -44,7 +44,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=8346c0e0537ba845dea03612f4d2c866&query=${query}`;
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=3059989ed47b278a15f3e7af0b471e77&query=${query}`;
       const res = await fetch(url);
       const data = await res.json();
       console.log(data);

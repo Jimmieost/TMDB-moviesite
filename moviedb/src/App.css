@@ -54,12 +54,13 @@ h2 {
   padding-bottom: 1rem;
   padding-left: 1rem;
   color: rgb(206, 199, 199);
-  background: linear-gradient(
+  /* background: linear-gradient(
     -10deg,
     rgba(0, 110, 255, 0.462),
     #000000,
     #31303d
-  );
+  ); */
+  background-color: black;
   font-weight: bolder;
   font-style: oblique;
 }
@@ -138,3 +139,4 @@ button.modal-button.btn.btn-secondary {
     #31303d
   );
 }
+
